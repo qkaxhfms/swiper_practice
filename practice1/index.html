@@ -4,8 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>practice 1</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        /* reset */
+        *{margin:0;padding:0;}
+        img{vertical-align:bottom;}
+        
+        /* content-01 */
+        .content-01{height:100vh;}
+        .content-01 .swiper-container {width: 100%;height: 100%;}
+        .content-01 .swiper-container .img{height:100%;}
+        .content-01 .swiper-container .con01{background-color:#777;}
+        .content-01 .swiper-container .con02{background-color:#888;}
+        .content-01 .swiper-container .con03{background-color:#999;}
+        .content-01 .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            opacity: 1;
+            border-bottom:1px solid transparent;
+            border-radius:inherit;
+            background:transparent;
+        }
+        .content-01 .swiper-pagination-bullet-active {
+            color: #fff;
+            border-bottom-color:#fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>practice</h1>
+    <!-- content-01 (s)-->
+    <div class="content-01">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img con01">lorem ipsum 1</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img con01">lorem ipsum 2</div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img con01">lorem ipsum 3</div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- content-01 (e)-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // swiper
+        let swiper = new Swiper('.swiper-container', {
+            loop:true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
+            },
+        });
+    </script>
 </body>
 </html>
